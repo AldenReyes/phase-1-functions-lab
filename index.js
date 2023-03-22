@@ -14,7 +14,7 @@ function distanceTravelledInFeet(startingBlock, endingBlock) {
 function calculatesFarePrice(startingBlock, endingBlock) {
   const fareDistance = (distanceTravelledInFeet(startingBlock, endingBlock));
   if (fareDistance > 2500) return ('cannot travel that far');
-  if (fareDistance > 2000) return 25;
-  if (fareDistance <= 2000 && fareDistance > 400) return ((fareDistance - 400) * 0.02);
-  else return 0
+  else if (fareDistance > 2000) return 25;
+  else if (fareDistance <= 2000 && fareDistance > 400) return ((fareDistance - 400) * 0.02);
+  else return 0 // A distance below 400 results in a free ride
 }
